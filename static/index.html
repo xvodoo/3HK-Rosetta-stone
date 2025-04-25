@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ξ 3HK</title>
+    <meta name="description" content="Created by xVodoo">
+    <meta name="author" content="xVodoo">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="static/client.js"></script>
+
+    <!-- سكريبتات ديالك -->
+    <script src="/static/packData.js"></script>
+    <script type="text/javascript" src="../dist/frontend.esm.js"></script>
+
+    <!-- سكريبت WebSocket -->
+    <script>
+      const socket = new WebSocket('ws://localhost:3000');
+      socket.onmessage = (event) => {
+        if (event.data === 'reload') {
+          console.log('♻️ Reloading...');
+          location.reload(); // يعاود يحمل الصفحة
+        }
+      };
+    </script>
+  </body>
+</html>
+

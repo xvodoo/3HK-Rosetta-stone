@@ -1,0 +1,113 @@
+html {
+  background: #323232;
+
+}
+ 
+#root {
+  width: 500px;
+  height: 600px;
+  display: grid;
+  grid-template:
+    "err err err err" 1fr
+    "top top top top" 3fr
+    "tim tim tim tim" 2fr
+    "val val cle cle" 2fr
+    "ext ext ext ext" 40px
+    / 1fr 1fr 1fr 1fr;
+   
+}
+
+.error-banner {
+  grid-area: err;
+  height: 0px;
+  background-color: red;
+  color: white;
+  transition: height 0.2s linear;
+  overflow: hidden;
+}
+
+.error-banner.active {
+  padding: 5px;
+  height: 40px;
+}
+
+.top {
+  grid-area: top;
+  align-items: center;
+  color: #ffc000;
+ ;
+}
+.top a{
+  color: rgb(30, 255, 0);
+  font-size: 14px;
+}
+
+.time-form {
+  grid-area: tim;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.time-form input{
+  border-radius: 20px;
+  border: none;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font: 25px;
+  outline: none;
+}
+.time-form button{
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  background-color: #4f2259;
+  border: none;
+  border-radius: 20px;
+  height: 40px;
+  margin-left: 10px;
+  background-color: ffc000;
+  color: #4f2259;
+}
+.validate-form {
+  grid-area: val;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.validate-form button {
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 20px;
+}
+
+.clear-cache {
+  grid-area: cle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.clear-cache button {
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 20px;
+}
+
+p.warning-form {
+  color: white;
+  text-align: center;
+  font-style: bold;
+}
+
+div.extra-bar {
+  grid-area: ext;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

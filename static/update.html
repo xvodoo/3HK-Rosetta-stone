@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Latest Updates</h1>
+    <ul id="updates-list">
+     
+    </ul>
+
+    <script>
+      fetch('/api/version') 
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('updates-list').innerHTML = `
+            <li>Latest Version: ${data.version}</li>
+            <li>Changelog:</li>
+            <ul>
+              <li>Bug fixes and improvements.</li>
+              <li>Added new features for user experience.</li>
+            
+            </ul>
+          `;
+        })
+        .catch(error => {
+          console.error('Error fetching version:', error);
+        });
+    </script>
+  </body>
+</html>
