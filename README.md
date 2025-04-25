@@ -1,4 +1,4 @@
-# 3HK Rosetta stone
+# 3HK Rosetta Stone
 This repository contains an extension for the 3HK Rosetta Stone project. The extension is designed to collaborate with users by providing additional functionality, improving accessibility, and supporting the increase of working hours for students. It aims to enhance the overall user experience while maintaining an efficient and seamless interaction with the Rosetta Stone platform.
 
 ## Install
