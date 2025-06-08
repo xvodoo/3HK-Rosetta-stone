@@ -17,17 +17,17 @@
     <div id="root"></div>
     <script src="static/client.js"></script>
 
-    <!-- سكريبتات ديالك -->
+
     <script src="/static/packData.js"></script>
     <script type="text/javascript" src="../dist/frontend.esm.js"></script>
 
-    <!-- سكريبت WebSocket -->
+
     <script>
       const socket = new WebSocket('ws://localhost:3000');
       socket.onmessage = (event) => {
         if (event.data === 'reload') {
           console.log('♻️ Reloading...');
-          location.reload(); // يعاود يحمل الصفحة
+          location.reload(); 
         }
       };
     </script>
