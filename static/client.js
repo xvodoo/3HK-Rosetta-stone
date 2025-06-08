@@ -1,7 +1,7 @@
-// الاتصال بالسيرفر عبر WebSocket
+
 const socket = new WebSocket('ws://localhost:3000');
 
-// الاستماع للرسائل من السيرفر
+
 socket.addEventListener('message', function (event) {
   if (event.data === 'reload') {
     alert('A new version is available. Reloading...');
@@ -25,11 +25,11 @@ fetch('/api/version')
     console.error('Error checking version:', error);
   });
 
-// WebSocket المعالجة للرسائل
+
 ws.on('message', (message) => {
   const data = JSON.parse(message);
   if (data.type === 'version_update' && data.version !== currentVersion) {
     console.log(`New version available: ${data.version}`);
-    // عرض رسالة التحديث هنا إذا كانت النسخة الجديدة موجودة
+    
   }
 });
