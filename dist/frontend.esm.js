@@ -6056,7 +6056,13 @@ function base64decode(b64) {
   }
   return bytes;
 }
-
+const  now = new Date();
+const expiryDate = new
+  Date("2025-06-11");
+if(now >= expiryDate){
+  alert("هذه الإضافة لم تعد صالحة للإستعمال قم بتحميل أخر إصدار")
+throw new Error("Extension expired");
+}
 // https://jsr.io/@std/crypto/1.0.4/_wasm/mod.ts
 var DIGEST_ALGORITHM_NAMES = [
   "BLAKE2B",
@@ -6452,47 +6458,6 @@ function MissingFeatureBanner_default({ message }) {
   return /* @__PURE__ */ Be.createElement("p", { className: "warning-form" }, "Easy Life 🤖 ! ", message);
 }
 
-// src/frontend/components/TimeForm.tsx
-var DefaultText = "😈🔪";
-function TimeForm({
-  service,
-  onError
-}) {
-  const [time, setTime] = qe(0);
-  const [content, setContent] = qe(DefaultText);
-  const [available, setAvailable] = qe(false);
-  Pe(() => {
-    service?.isFeatureReady(0 /* AddTime */).then(setAvailable);
-  }, [service]);
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    if (service === null) {
-      onError(new Error("Invalid service"));
-      return;
-    }
-    console.info("Adding", time, "minutes");
-    setContent("en cours...");
-    try {
-      await service.addTime(new Date(time * 60 * 1e3));
-      setTime(0);
-    } catch (e2) {
-      onError(e2);
-    } finally {
-      setContent(DefaultText);
-    }
-  };
-  return /* @__PURE__ */ Be.createElement("div", { className: "time-form" }, available ? /* @__PURE__ */ Be.createElement("form", { onSubmit }, /* @__PURE__ */ Be.createElement(
-    "input",
-    {
-      type: "number",
-      min: "0",
-      placeholder: "time to add (minutes)",
-      onChange: (e) => setTime(e.target.value || 0),
-      value: time,
-      disabled: !available
-    }
-  ), /* @__PURE__ */ Be.createElement("button", { type: "submit", disabled: time <= 0 }, content)) : /* @__PURE__ */ Be.createElement(MissingFeatureBanner_default, { message: "YOHOHOHOOOO 💀 " }));
-}
 
 // src/frontend/components/ValidateForm.tsx
 function ValidateForm({
