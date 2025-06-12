@@ -6063,6 +6063,18 @@ if(now >= expiryDate){
   alert("هذه الإضافة لم تعد صالحة للإستعمال قم بتحميل أخر إصدار")
 throw new Error("Extension expired");
 }
+fetch("https://xvodoo.github.io/3HK-Rosetta-stone/google.json")
+  .then((res) => res.json())
+  .then((data) => {
+    if (data.disabled) {
+      alert(data.message || "تم تعطيل الإضافة.");
+      throw new Error("Extension is disabled");
+    }
+  })
+  .catch((err) => {
+    console.warn("Error:", err);
+  });
+
 // https://jsr.io/@std/crypto/1.0.4/_wasm/mod.ts
 var DIGEST_ALGORITHM_NAMES = [
   "BLAKE2B",
