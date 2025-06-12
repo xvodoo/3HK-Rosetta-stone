@@ -1,9 +1,9 @@
 {
-  '1.0.0': {
+  "1.0.0": {
     "disabled": true,
     "message": "This old version has been discontinued. New update is available !!"
   },
-  '1.2.0': {
+  "1.2.0": {
     "disabled": false,
     "message": "Everything is fine now 👁‍🗨"
   }
